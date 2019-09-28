@@ -1,6 +1,11 @@
 <h1>SuriTalk</h1>
 <p>スリスリくんっぽい言葉に翻訳するよ</p>
 <%= form_with(url: '/translate') do |form| %>
-  <%= form.text_area :text %>
+  <%= form.text_area :source, value: @source %>
   <%= form.submit '翻訳' %>
+<% end %>
+
+<% if @result.present? %>
+  <p>翻訳結果</p>
+  <%= simple_format(@result) %>
 <% end %>
