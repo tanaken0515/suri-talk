@@ -4,7 +4,7 @@ class TopController < ApplicationController
 
   def translate
     @source = params[:source]
-    @result = @source.upcase # todo: suri_langを使って@sourceを変換する
+    @result = SuriLang::Translator.translate(@source)
     render :show
   end
 end
