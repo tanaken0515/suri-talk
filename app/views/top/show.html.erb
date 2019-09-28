@@ -1,2 +1,6 @@
-<h1>Top#show</h1>
-<p>Find me in app/views/top/show.html.erb</p>
+<h1>SuriTalk</h1>
+<p>スリスリくんっぽい言葉に翻訳するよ</p>
+<%= form_with(url: '/translate') do |form| %>
+  <%= form.text_area :text %>
+  <%= form.submit '翻訳' %>
+<% end %>
