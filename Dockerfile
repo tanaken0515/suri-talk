@@ -12,3 +12,6 @@ COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
 RUN bundle install
 COPY . /app
+
+ARG RAILS_ENV=development
+RUN if [ "$RAILS_ENV" = "production" ]; then SECRET_KEY_BASE=$(rails secret) bundle exec rails assets:precompile; fi
