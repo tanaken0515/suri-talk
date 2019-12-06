@@ -1,11 +1,38 @@
-<h1>SuriTalk</h1>
-<p>スリスリくんっぽい言葉に翻訳するよ</p>
-<%= form_with(url: '/translate') do |form| %>
-  <%= form.text_area :source, value: @source %>
-  <%= form.submit '翻訳' %>
-<% end %>
-
-<% if @result.present? %>
-  <p>翻訳結果</p>
-  <%= simple_format(@result) %>
-<% end %>
+<section class="section">
+  <div class="container">
+    <div class="subtitle">スリスリくんをマネしてしゃべります</div>
+  </div>
+  <%= form_with(url: '/translate') do |form| %>
+    <div class="field">
+      <div class="control">
+        <%= form.text_area :source, value: @source, placeholder: "しゃべらせたい文章を入れてください", class: 'textarea' %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control">
+        <div class="buttons is-centered">
+          <%= form.submit 'しゃべらせる', class: 'button' %>
+        </div>
+      </div>
+    </div>
+    <% if @result.present? %>
+      <div class="card">
+        <div class="card-content">
+          <article class="media">
+            <div class="media-left">
+              <p class="image is-48x48">
+                <%= image_tag('/kagemushakun.png', class: 'is-rounded') %>
+              </p>
+            </div>
+            <div class="media-content">
+              <div class="content">
+                <strong>忍者カゲムシャくん</strong><br>
+                <%= simple_format(@result) %>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</section>
