@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>App</title>
+    <title>Kagemushakun</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,6 +10,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <%= link_to 'Kagemushakun', root_path, style: 'text-decoration: none; font-size: xx-large;', class: "navbar-item" %>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="columns is-desktop">
+        <div class="column is-half is-offset-one-quarter">
+          <%= yield %>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
