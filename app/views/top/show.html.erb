@@ -27,12 +27,21 @@
             <div class="media-content">
               <div class="content">
                 <strong>忍者カゲムシャくん</strong><br>
+                <% if @greeter %>
+                  <%= simple_format(@greeter.message + "\n") %>
+                <% end %>
                 <%= simple_format(@result) %>
               </div>
             </div>
           </article>
         </div>
       </div>
+      <% if @greeter %>
+        <br>
+        <div class="has-text-right">
+          <%= link_to '🔗参考にしたジャーナル', @greeter.source, target: '_blank', rel: 'noopener' %>
+        </div>
+      <% end %>
     <% end %>
   <% end %>
 </section>
