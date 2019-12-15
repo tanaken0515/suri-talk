@@ -9,6 +9,14 @@
       </div>
     </div>
     <div class="field">
+      <div class="control has-text-right">
+        <label class="checkbox">
+          <%= form.check_box :with_greeting, checked: @with_greeting %>
+          あいさつさせる
+        </label>
+      </div>
+    </div>
+    <div class="field">
       <div class="control">
         <div class="buttons is-centered">
           <%= form.submit 'しゃべらせる', class: 'button' %>
