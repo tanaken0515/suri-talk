@@ -4,7 +4,8 @@ class TopController < ApplicationController
 
   def translate
     @source = params[:source]
-    @result = SuriLang::Translator.translate(@source)
+    source = @source.present? ? @source : 'しゃべらせたい文章を入れてください。'
+    @result = SuriLang::Translator.translate(source)
     @greeter = SuriLang::Greeter.random_build
     render :show
   end
