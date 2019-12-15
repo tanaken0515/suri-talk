@@ -38,3 +38,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'suri_lang'
 gem 'bulma-rails'
+gem 'font-awesome-sass'
